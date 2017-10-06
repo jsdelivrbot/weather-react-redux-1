@@ -4,7 +4,8 @@ import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine,
-  SparklinesSpots
+  SparklinesSpots,
+  SparklinesBars
 } from 'react-sparklines';
 
 function average(data) {
@@ -19,10 +20,9 @@ class Graph extends Component {
   render() {
     return (
       <div>
-        <Sparklines height={120} width={180} data={this.props.data} limit={10}>
+        <Sparklines height={120} width={180} data={this.props.data} limit={10} min={0} max={120}>
           <SparklinesLine color={this.props.color} />
           <SparklinesReferenceLine type="avg" />
-          <SparklinesSpots />
         </Sparklines>
         <div>{average(this.props.data)} {this.props.units}</div>
       </div>

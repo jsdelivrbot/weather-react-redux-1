@@ -11,7 +11,7 @@ class CurrentWeather extends Component {
   renderCity(city) {
     const today = moment().format("l");
     const temperature = this.props.weather.temperatures.find( temperature => {
-      return temperature.cityId === city.id && temperature.date === today;
+      return temperature.cityId === city.id;
     });
 
     return (
